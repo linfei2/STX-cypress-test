@@ -13,7 +13,7 @@ export class HomePage {
 
     search() {
         cy.get('.searchBar').click()
-        cy.get('input.searchInput').type(this.searchKeyword)
+        cy.xpath('//input[@class="searchInput"]').type(this.searchKeyword)
         cy.get('.searchButton input[value=Search]').click()
         cy.url().should('include', `hs-search-results?term=${this.searchKeyword}`)
     }
