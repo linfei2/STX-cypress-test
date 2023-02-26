@@ -4,28 +4,28 @@ import { PostPage } from "../page-objects/post-page";
 
 
 describe('Home Page tests', () => {
-  const homePage = new HomePage()
+  const homePage = new HomePage();
 
   it('Can search for keyword and get related results', () => {
     homePage.navigate()
     homePage.acceptCookies()
-    homePage.search('Test')
-    homePage.verifyResults('Test')
+    homePage.search()
+    homePage.verifyResults()
     homePage.followLink()
   })
 })
 
-// describe('Blog tests', () => {
-//   const blogPage = new BlogPage()
+describe('Blog tests', () => {
+  const blogPage = new BlogPage()
 
-//   it('Can see blog post with relevant info', () => {
-//     blogPage.navigate()
-//     blogPage.acceptCookies()
+  it('Can see blog post with relevant info', () => {
+    blogPage.navigate()
+    blogPage.acceptCookies()
 
-//     const postPage = blogPage.clickFirstPost()
-//     postPage.getTimeToRead()
-//     postPage.getPostCategory()
-//     postPage.getPostTitle()
-//     postPage.getSharingIcons().should('have.length', 3)
-//   })
-// })
+    const postPage = blogPage.clickFirstPost()
+    postPage.getTimeToRead()
+    postPage.getPostCategory()
+    postPage.getPostTitle()
+    postPage.getSharingIcons().should('have.length', 3)
+  })
+})
