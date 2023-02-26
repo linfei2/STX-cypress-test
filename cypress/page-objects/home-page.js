@@ -1,4 +1,6 @@
-export class HomePage {
+import { BasePage } from "./base-page";
+
+export class HomePage extends BasePage{
 
     searchKeyword = 'Test';
 
@@ -7,9 +9,6 @@ export class HomePage {
         cy.title().should('eq', 'Python Development Company - Software House - Poland - STX Next')
     }
 
-    acceptCookies() {
-        cy.get('#hs-eu-confirmation-button').click()
-    }
 
     search() {
         cy.get('.searchBar').click()
